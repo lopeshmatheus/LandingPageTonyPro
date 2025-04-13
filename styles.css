@@ -55,3 +55,58 @@
     }
 }
 
+@layer navigation {
+    header {
+        background: var(--dark-bg);
+        color: var(--light-text);
+        padding: 1rem 0;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: calc(100% - 2rem);
+            margin: auto;
+            padding: 0 1rem;
+            
+            .logo {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            .menu-toggle {
+                font-size: 2rem;
+
+                @media (width > 768px) {
+                    display: none;
+                }
+            }
+            .nav-links {
+                display: none;
+                background: var(--dark-bg);
+                text-align: right;
+                list-style: none;
+                flex-direction: column;
+
+                &.active {
+                    display: flex;
+                }
+
+                @media (width <= 768px) {
+                    top: 60px;
+                    right: 0;
+                    width: 100%;
+                    position: absolute;
+                }
+                
+                @media (width > 768px){
+                    display: flex;
+                    flex-direction: row;
+
+                }
+            }
+
+        }
+    }
+}
